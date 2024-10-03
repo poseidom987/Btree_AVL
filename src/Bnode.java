@@ -41,14 +41,14 @@ public class Bnode {
     }
 
     // Calcula a altura da árvore
-    private int height(Bnode node) {
+    private int altura(Bnode node) {
         if (node == null) return 0;
-        return 1 + Math.max(height(node.esq), height(node.dir));
+        return 1 + Math.max(altura(node.esq), altura(node.dir));
     }
 
     // Calcula o fator de balanceamento
     private int getBalance() {
-        return height(esq) - height(dir);
+        return altura(esq) - altura(dir);
     }
 
     // Balanceia o nó e retorna o novo nó
